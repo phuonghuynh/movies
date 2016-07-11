@@ -1,4 +1,4 @@
-# Project 1 - *MOVIES*
+# Project 1 - *movies*
 
 **MOVIES** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
