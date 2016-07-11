@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -32,8 +33,20 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
       delegate: nil,
       delegateQueue: NSOperationQueue.mainQueue())
 
+    // Display HUD right before the request is made
+    MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
     let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {
       (dataOrNil, response, error) in
+      print(error?.localizedDescription)
+
+      if (error != nil) {
+        let alert = UIAlertController(title: "Alert", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+        self.presentViewController(alert, animated: true, completion: nil)
+      }
+
+      MBProgressHUD.hideHUDForView(self.view, animated: true)
+
       if let data = dataOrNil {
         if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
           data, options: []) as? NSDictionary {
@@ -56,7 +69,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
     let url = baseUrl + (movies[indexPath.row]["poster_path"] as! String)
     cell.poster.setImageWithURL(NSURL(string: url)!)
-    
+
     return cell
   }
 
@@ -67,4 +80,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     nextViewController.overviewStr = movies[indexPath!.row]["overview"] as! String
     nextViewController.posterUrl = baseUrl + (movies[indexPath!.row]["poster_path"] as! String)
   }
+
+
 }

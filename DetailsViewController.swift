@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
 
     posterImage.setImageWithURL(NSURL(string: posterUrl)!)
     overviewLabel.text = overviewStr
+    overviewLabel.sizeToFit()
   }
 
 }

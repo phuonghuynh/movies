@@ -60,7 +60,6 @@
                     <navigationItem key="navigationItem" title="Movies" id="Lfs-6t-nY6"/>
                     <connections>
                         <outlet property="tableView" destination="3M1-lh-kCN" id="ROz-fF-499"/>
-                        <segue destination="oVb-LY-hlV" kind="push" id="p44-Uy-x4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,11 +75,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PgA-b0-k2I">
-                                <rect key="frame" x="0.0" y="64" width="320" height="276"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="276"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qtv-Q7-uYD">
-                                <rect key="frame" x="14" y="348" width="290" height="200"/>
+                                <rect key="frame" x="10" y="352" width="290" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -118,7 +117,4 @@
             <point key="canvasLocation" x="162" y="406"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="p44-Uy-x4s"/>
-    </inferredMetricsTieBreakers>
 </document>
